@@ -10,16 +10,16 @@ class ValidationCriteria extends StatelessWidget {
     required this.isSubmitted,
   }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    Color getTextColor(bool expresion) {
-      if (isSubmitted) {
-        return expresion ? const Color(0xFF63C59C) : const Color(0xFFFE807F);
-      }
-
-      return const Color(0xFF4A4E72);
+  Color getTextColor(bool expresion) {
+    if (isSubmitted) {
+      return expresion ? const Color(0xFF63C59C) : const Color(0xFFFE807F);
     }
 
+    return expresion ? const Color(0xFF63C59C) : const Color(0xFF4A4E72);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 20),
       child: Column(
